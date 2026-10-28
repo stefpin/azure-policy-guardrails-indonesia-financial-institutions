@@ -1,0 +1,344 @@
+[
+  {
+    "chapter": "1 Prevent",
+    "family": "F1",
+    "ref": "AllowedLocations",
+    "name": "Allowed locations",
+    "id": "e56962a6-4747-49cd-b67b-bf8b01975c4c",
+    "effect": "Deny",
+    "version": "1.1.0"
+  },
+  {
+    "chapter": "1 Prevent",
+    "family": "F2",
+    "ref": "NoPublicIpOnNic",
+    "name": "Network interfaces should not have public IPs",
+    "id": "83a86a26-fd1f-447c-b59d-e51f44264114",
+    "effect": "deny",
+    "version": "1.0.0"
+  },
+  {
+    "chapter": "1 Prevent",
+    "family": "F2",
+    "ref": "NsgNoInternetMgmtPorts",
+    "name": "ALZ PD - NSG rules must not allow Internet access to SSH or RDP",
+    "id": "alz-pd-nsg-no-internet-mgmt",
+    "effect": "Deny",
+    "version": "custom"
+  },
+  {
+    "chapter": "1 Prevent",
+    "family": "F3",
+    "ref": "StorageSecureTransfer",
+    "name": "Secure transfer to storage accounts should be enabled",
+    "id": "404c3081-a854-4457-ae30-26a93ef643f9",
+    "effect": "Deny",
+    "version": "2.0.0"
+  },
+  {
+    "chapter": "1 Prevent",
+    "family": "F3",
+    "ref": "StorageMinTls",
+    "name": "Storage accounts should have the specified minimum TLS version",
+    "id": "fe83a0eb-a853-422d-aac2-1bffd182c5d0",
+    "effect": "Deny",
+    "version": "1.0.0"
+  },
+  {
+    "chapter": "1 Prevent",
+    "family": "F3",
+    "ref": "AppServiceHttpsOnly",
+    "name": "App Service apps should only be accessible over HTTPS",
+    "id": "a4af4a39-4135-47fb-b175-47fbdf85311d",
+    "effect": "Deny",
+    "version": "4.0.0"
+  },
+  {
+    "chapter": "1 Prevent",
+    "family": "F4",
+    "ref": "KeyVaultPurgeProtection",
+    "name": "Key vaults should have deletion protection enabled",
+    "id": "0b60c0b2-2dc2-4e1c-b5c9-abbed971de53",
+    "effect": "Deny",
+    "version": "2.1.0"
+  },
+  {
+    "chapter": "1 Prevent",
+    "family": "F8",
+    "ref": "RouteDefaultViaFirewall",
+    "name": "ALZ PD - The default route must go through the hub firewall",
+    "id": "alz-pd-route-default-via-fw",
+    "effect": "Deny",
+    "version": "custom"
+  },
+  {
+    "chapter": "1 Prevent",
+    "family": "F9",
+    "ref": "RequireCostCenterTag",
+    "name": "Require a tag on resources",
+    "id": "871b6d14-10aa-478d-b590-94f262ecfa99",
+    "effect": "deny",
+    "version": "1.0.1"
+  },
+  {
+    "chapter": "1 Prevent",
+    "family": "F9",
+    "ref": "RequireOwnerTag",
+    "name": "Require a tag on resources",
+    "id": "871b6d14-10aa-478d-b590-94f262ecfa99",
+    "effect": "deny",
+    "version": "1.0.1"
+  },
+  {
+    "chapter": "2 Detect",
+    "family": "F2",
+    "ref": "AppServicePublicAccess",
+    "name": "App Service apps should disable public network access",
+    "id": "1b5ef780-c53c-4a64-87f3-bb9c8c8094ba",
+    "effect": "Audit",
+    "version": "1.2.0"
+  },
+  {
+    "chapter": "2 Detect",
+    "family": "F2",
+    "ref": "StoragePublicAccess",
+    "name": "Storage accounts should disable public network access",
+    "id": "b2982f36-99f2-4db5-8eff-283140c09693",
+    "effect": "Audit",
+    "version": "1.1.0"
+  },
+  {
+    "chapter": "2 Detect",
+    "family": "F2",
+    "ref": "KeyVaultPublicAccess",
+    "name": "Azure Key Vault should disable public network access",
+    "id": "405c5871-3e91-4644-8a63-58e19d68ff5b",
+    "effect": "Audit",
+    "version": "1.1.0"
+  },
+  {
+    "chapter": "2 Detect",
+    "family": "F2",
+    "ref": "PostgresPublicAccess",
+    "name": "Public network access should be disabled for PostgreSQL flexible servers",
+    "id": "5e1de0e3-42cb-4ebc-a86d-61d0c619ca48",
+    "effect": "Audit",
+    "version": "3.1.0"
+  },
+  {
+    "chapter": "2 Detect",
+    "family": "F2",
+    "ref": "ManagedRedisPublicAccess",
+    "name": "[Preview]: Azure Managed Redis should disable public network access",
+    "id": "0f8a6cc3-040f-4b9b-8828-b37490729517",
+    "effect": "Audit",
+    "version": "1.0.0-preview"
+  },
+  {
+    "chapter": "2 Detect",
+    "family": "F2",
+    "ref": "VmManagementPortsClosed",
+    "name": "Management ports should be closed on your virtual machines",
+    "id": "22730e10-96f6-4aac-ad84-9383d35b5917",
+    "effect": "AuditIfNotExists",
+    "version": "3.0.0"
+  },
+  {
+    "chapter": "2 Detect",
+    "family": "F3",
+    "ref": "AppGatewayHttpsListener",
+    "name": "ALZ PD - Application Gateway listeners must use HTTPS",
+    "id": "alz-pd-appgw-https-listener",
+    "effect": "Audit",
+    "version": "custom"
+  },
+  {
+    "chapter": "2 Detect",
+    "family": "F3",
+    "ref": "AppServiceMinTls",
+    "name": "App Service apps should use the latest TLS version",
+    "id": "f0e6e85b-9b9f-4a4b-b67b-f730d42f1b0b",
+    "effect": "AuditIfNotExists",
+    "version": "2.2.0"
+  },
+  {
+    "chapter": "2 Detect",
+    "family": "F4",
+    "ref": "KeyVaultUsesRbac",
+    "name": "Azure Key Vault should use RBAC permission model",
+    "id": "12d4fa5e-1f9f-4c21-97a9-b99b3c6611b5",
+    "effect": "Audit",
+    "version": "1.0.1"
+  },
+  {
+    "chapter": "2 Detect",
+    "family": "F4",
+    "ref": "StorageInfrastructureEncryption",
+    "name": "Storage accounts should have infrastructure encryption",
+    "id": "4733ea7b-a883-42fe-8cac-97454c2a9e4a",
+    "effect": "Audit",
+    "version": "1.1.0"
+  },
+  {
+    "chapter": "2 Detect",
+    "family": "F4",
+    "ref": "EncryptionAtHost",
+    "name": "Virtual machines and virtual machine scale sets should have encryption at host enabled",
+    "id": "fc4d8e41-e223-45ea-9bf5-eada37891d87",
+    "effect": "Audit",
+    "version": "1.0.0"
+  },
+  {
+    "chapter": "2 Detect",
+    "family": "F5",
+    "ref": "DiagKeyVault",
+    "name": "Enable logging by category group for Key vaults (microsoft.keyvault/vaults) to Log Analytics",
+    "id": "6b359d8f-f88d-4052-aa7c-32015963ecc1",
+    "effect": "AuditIfNotExists",
+    "version": "1.1.0"
+  },
+  {
+    "chapter": "2 Detect",
+    "family": "F5",
+    "ref": "DiagAppService",
+    "name": "Enable logging by category group for App Service (microsoft.web/sites) to Log Analytics",
+    "id": "c0d8e23a-47be-4032-961f-8b0ff3957061",
+    "effect": "AuditIfNotExists",
+    "version": "1.0.0"
+  },
+  {
+    "chapter": "2 Detect",
+    "family": "F5",
+    "ref": "DiagPostgres",
+    "name": "Enable logging by category group for PostgreSQL flexible server (microsoft.dbforpostgresql/flexibleservers) to Log Analytics",
+    "id": "cdd1dbc6-0004-4fcd-afd7-b67550de37ff",
+    "effect": "AuditIfNotExists",
+    "version": "1.0.0"
+  },
+  {
+    "chapter": "2 Detect",
+    "family": "F5",
+    "ref": "DiagAppGateway",
+    "name": "Enable logging by category group for Application gateways (microsoft.network/applicationgateways) to Log Analytics",
+    "id": "92012204-a7e4-4a95-bbe5-90d0d3e12735",
+    "effect": "AuditIfNotExists",
+    "version": "1.0.0"
+  },
+  {
+    "chapter": "2 Detect",
+    "family": "F5",
+    "ref": "DiagRedisEnterprise",
+    "name": "Enable logging by category group for Caches (microsoft.cache/redisenterprise/databases) to Log Analytics",
+    "id": "fa570aa1-acca-4eea-8e5a-233cf2c5e4c2",
+    "effect": "AuditIfNotExists",
+    "version": "1.0.0"
+  },
+  {
+    "chapter": "2 Detect",
+    "family": "F6",
+    "ref": "VmBackupEnabled",
+    "name": "Azure Backup should be enabled for Virtual Machines",
+    "id": "013e242c-8828-4970-87b3-ab247555486d",
+    "effect": "AuditIfNotExists",
+    "version": "3.0.0"
+  },
+  {
+    "chapter": "2 Detect",
+    "family": "F6",
+    "ref": "PostgresGeoBackup",
+    "name": "Geo-redundant backup should be enabled for Azure Database for PostgreSQL flexible servers",
+    "id": "cee2f9fd-3968-44be-a863-bd62c9884423",
+    "effect": "Audit",
+    "version": "1.0.0"
+  },
+  {
+    "chapter": "2 Detect",
+    "family": "F7",
+    "ref": "VmTrustedLaunch",
+    "name": "Virtual Machine should have TrustedLaunch enabled",
+    "id": "c95b54ad-0614-4633-ab29-104b01235cbf",
+    "effect": "Audit",
+    "version": "1.0.0"
+  },
+  {
+    "chapter": "2 Detect",
+    "family": "F7",
+    "ref": "VmVulnerabilityAssessment",
+    "name": "A vulnerability assessment solution should be enabled on your virtual machines",
+    "id": "501541f7-f7e7-4cd6-868c-4190fdad3ac9",
+    "effect": "AuditIfNotExists",
+    "version": "3.0.0"
+  },
+  {
+    "chapter": "2 Detect",
+    "family": "F8",
+    "ref": "SubnetHasNsg",
+    "name": "Subnets should be associated with a Network Security Group",
+    "id": "e71308d3-144b-4262-b144-efdc3cc90517",
+    "effect": "AuditIfNotExists",
+    "version": "3.0.0"
+  },
+  {
+    "chapter": "3 Remediate",
+    "family": "F9",
+    "ref": "InheritOwnerTag",
+    "name": "Inherit a tag from the resource group if missing",
+    "id": "ea3f2387-9b95-492a-a190-fcdc54f7b070",
+    "effect": "modify",
+    "version": "1.0.0"
+  },
+  {
+    "chapter": "3 Remediate",
+    "family": "F9",
+    "ref": "InheritCostCenterTag",
+    "name": "Inherit a tag from the resource group if missing",
+    "id": "ea3f2387-9b95-492a-a190-fcdc54f7b070",
+    "effect": "modify",
+    "version": "1.0.0"
+  },
+  {
+    "chapter": "3 Remediate",
+    "family": "F5",
+    "ref": "DeployDiagKeyVault",
+    "name": "Enable logging by category group for Key vaults (microsoft.keyvault/vaults) to Log Analytics",
+    "id": "6b359d8f-f88d-4052-aa7c-32015963ecc1",
+    "effect": "DeployIfNotExists",
+    "version": "1.1.0"
+  },
+  {
+    "chapter": "3 Remediate",
+    "family": "F5",
+    "ref": "DeployDiagAppService",
+    "name": "Enable logging by category group for App Service (microsoft.web/sites) to Log Analytics",
+    "id": "c0d8e23a-47be-4032-961f-8b0ff3957061",
+    "effect": "DeployIfNotExists",
+    "version": "1.0.0"
+  },
+  {
+    "chapter": "3 Remediate",
+    "family": "F5",
+    "ref": "DeployDiagPostgres",
+    "name": "Enable logging by category group for PostgreSQL flexible server (microsoft.dbforpostgresql/flexibleservers) to Log Analytics",
+    "id": "cdd1dbc6-0004-4fcd-afd7-b67550de37ff",
+    "effect": "DeployIfNotExists",
+    "version": "1.0.0"
+  },
+  {
+    "chapter": "3 Remediate",
+    "family": "F5",
+    "ref": "DeployDiagAppGateway",
+    "name": "Enable logging by category group for Application gateways (microsoft.network/applicationgateways) to Log Analytics",
+    "id": "92012204-a7e4-4a95-bbe5-90d0d3e12735",
+    "effect": "DeployIfNotExists",
+    "version": "1.0.0"
+  },
+  {
+    "chapter": "3 Remediate",
+    "family": "F5",
+    "ref": "DeployDiagRedisEnterprise",
+    "name": "Enable logging by category group for Caches (microsoft.cache/redisenterprise/databases) to Log Analytics",
+    "id": "fa570aa1-acca-4eea-8e5a-233cf2c5e4c2",
+    "effect": "DeployIfNotExists",
+    "version": "1.0.0"
+  }
+]

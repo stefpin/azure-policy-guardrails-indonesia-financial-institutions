@@ -1,0 +1,16 @@
+{
+ "ownerTagName": {
+  "type": "String",
+  "defaultValue": "Owner",
+  "metadata": {"displayName": "Owner tag name"}
+ },
+ "costCenterTagName": {
+  "type": "String",
+  "defaultValue": "CostCenter",
+  "metadata": {"displayName": "Cost centre tag name"}
+ },
+ "logAnalyticsWorkspaceId": {
+  "type": "String",
+  "metadata": {"displayName": "Central Log Analytics workspace (resource ID)"}
+ }
+}

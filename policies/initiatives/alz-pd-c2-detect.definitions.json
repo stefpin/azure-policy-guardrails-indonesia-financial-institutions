@@ -1,0 +1,147 @@
+[
+ {
+  "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/1b5ef780-c53c-4a64-87f3-bb9c8c8094ba",
+  "policyDefinitionReferenceId": "AppServicePublicAccess",
+  "groupNames": ["F2-PublicExposure"],
+  "parameters": {"effect": {"value": "Audit"}}
+ },
+ {
+  "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/b2982f36-99f2-4db5-8eff-283140c09693",
+  "policyDefinitionReferenceId": "StoragePublicAccess",
+  "groupNames": ["F2-PublicExposure"],
+  "parameters": {"effect": {"value": "Audit"}}
+ },
+ {
+  "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/405c5871-3e91-4644-8a63-58e19d68ff5b",
+  "policyDefinitionReferenceId": "KeyVaultPublicAccess",
+  "groupNames": ["F2-PublicExposure"],
+  "parameters": {"effect": {"value": "Audit"}}
+ },
+ {
+  "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/5e1de0e3-42cb-4ebc-a86d-61d0c619ca48",
+  "policyDefinitionReferenceId": "PostgresPublicAccess",
+  "groupNames": ["F2-PublicExposure"],
+  "parameters": {"effect": {"value": "Audit"}}
+ },
+ {
+  "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/0f8a6cc3-040f-4b9b-8828-b37490729517",
+  "policyDefinitionReferenceId": "ManagedRedisPublicAccess",
+  "groupNames": ["F2-PublicExposure"],
+  "parameters": {"effect": {"value": "Audit"}}
+ },
+ {
+  "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/22730e10-96f6-4aac-ad84-9383d35b5917",
+  "policyDefinitionReferenceId": "VmManagementPortsClosed",
+  "groupNames": ["F2-PublicExposure"],
+  "parameters": {"effect": {"value": "AuditIfNotExists"}}
+ },
+ {
+  "policyDefinitionId": "/subscriptions/$SUB/providers/Microsoft.Authorization/policyDefinitions/alz-pd-appgw-https-listener",
+  "policyDefinitionReferenceId": "AppGatewayHttpsListener",
+  "groupNames": ["F3-DataInTransit"],
+  "parameters": {"effect": {"value": "Audit"}}
+ },
+ {
+  "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/f0e6e85b-9b9f-4a4b-b67b-f730d42f1b0b",
+  "policyDefinitionReferenceId": "AppServiceMinTls",
+  "groupNames": ["F3-DataInTransit"],
+  "parameters": {"effect": {"value": "AuditIfNotExists"}}
+ },
+ {
+  "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/12d4fa5e-1f9f-4c21-97a9-b99b3c6611b5",
+  "policyDefinitionReferenceId": "KeyVaultUsesRbac",
+  "groupNames": ["F4-StoredDataKeys"],
+  "parameters": {"effect": {"value": "Audit"}}
+ },
+ {
+  "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/4733ea7b-a883-42fe-8cac-97454c2a9e4a",
+  "policyDefinitionReferenceId": "StorageInfrastructureEncryption",
+  "groupNames": ["F4-StoredDataKeys"],
+  "parameters": {"effect": {"value": "Audit"}}
+ },
+ {
+  "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/fc4d8e41-e223-45ea-9bf5-eada37891d87",
+  "policyDefinitionReferenceId": "EncryptionAtHost",
+  "groupNames": ["F4-StoredDataKeys"],
+  "parameters": {"effect": {"value": "Audit"}}
+ },
+ {
+  "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/6b359d8f-f88d-4052-aa7c-32015963ecc1",
+  "policyDefinitionReferenceId": "DiagKeyVault",
+  "groupNames": ["F5-Monitoring"],
+  "parameters": {
+   "effect": {"value": "AuditIfNotExists"},
+   "logAnalytics": {"value": "[parameters('logAnalyticsWorkspaceId')]"},
+   "categoryGroup": {"value": "allLogs"}
+  }
+ },
+ {
+  "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/c0d8e23a-47be-4032-961f-8b0ff3957061",
+  "policyDefinitionReferenceId": "DiagAppService",
+  "groupNames": ["F5-Monitoring"],
+  "parameters": {
+   "effect": {"value": "AuditIfNotExists"},
+   "logAnalytics": {"value": "[parameters('logAnalyticsWorkspaceId')]"}
+  }
+ },
+ {
+  "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/cdd1dbc6-0004-4fcd-afd7-b67550de37ff",
+  "policyDefinitionReferenceId": "DiagPostgres",
+  "groupNames": ["F5-Monitoring"],
+  "parameters": {
+   "effect": {"value": "AuditIfNotExists"},
+   "logAnalytics": {"value": "[parameters('logAnalyticsWorkspaceId')]"},
+   "categoryGroup": {"value": "allLogs"}
+  }
+ },
+ {
+  "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/92012204-a7e4-4a95-bbe5-90d0d3e12735",
+  "policyDefinitionReferenceId": "DiagAppGateway",
+  "groupNames": ["F5-Monitoring"],
+  "parameters": {
+   "effect": {"value": "AuditIfNotExists"},
+   "logAnalytics": {"value": "[parameters('logAnalyticsWorkspaceId')]"},
+   "categoryGroup": {"value": "allLogs"}
+  }
+ },
+ {
+  "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/fa570aa1-acca-4eea-8e5a-233cf2c5e4c2",
+  "policyDefinitionReferenceId": "DiagRedisEnterprise",
+  "groupNames": ["F5-Monitoring"],
+  "parameters": {
+   "effect": {"value": "AuditIfNotExists"},
+   "logAnalytics": {"value": "[parameters('logAnalyticsWorkspaceId')]"},
+   "categoryGroup": {"value": "allLogs"}
+  }
+ },
+ {
+  "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/013e242c-8828-4970-87b3-ab247555486d",
+  "policyDefinitionReferenceId": "VmBackupEnabled",
+  "groupNames": ["F6-BackupRecovery"],
+  "parameters": {"effect": {"value": "AuditIfNotExists"}}
+ },
+ {
+  "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/cee2f9fd-3968-44be-a863-bd62c9884423",
+  "policyDefinitionReferenceId": "PostgresGeoBackup",
+  "groupNames": ["F6-BackupRecovery"],
+  "parameters": {"effect": {"value": "Audit"}}
+ },
+ {
+  "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/c95b54ad-0614-4633-ab29-104b01235cbf",
+  "policyDefinitionReferenceId": "VmTrustedLaunch",
+  "groupNames": ["F7-ComputeBaseline"],
+  "parameters": {"effect": {"value": "Audit"}}
+ },
+ {
+  "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/501541f7-f7e7-4cd6-868c-4190fdad3ac9",
+  "policyDefinitionReferenceId": "VmVulnerabilityAssessment",
+  "groupNames": ["F7-ComputeBaseline"],
+  "parameters": {"effect": {"value": "AuditIfNotExists"}}
+ },
+ {
+  "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/e71308d3-144b-4262-b144-efdc3cc90517",
+  "policyDefinitionReferenceId": "SubnetHasNsg",
+  "groupNames": ["F8-NetworkSegmentation"],
+  "parameters": {"effect": {"value": "AuditIfNotExists"}}
+ }
+]

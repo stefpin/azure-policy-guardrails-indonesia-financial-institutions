@@ -1,0 +1,32 @@
+{
+ "allowedLocations": {
+  "type": "Array",
+  "defaultValue": ["indonesiacentral", "southeastasia"],
+  "metadata": {
+   "displayName": "Allowed regions",
+   "description": "Regions that may be deployed into.",
+   "strongType": "location"
+  }
+ },
+ "costCenterTagName": {
+  "type": "String",
+  "defaultValue": "CostCenter",
+  "metadata": {"displayName": "Cost centre tag name"}
+ },
+ "ownerTagName": {
+  "type": "String",
+  "defaultValue": "Owner",
+  "metadata": {"displayName": "Owner tag name"}
+ },
+ "firewallPrivateIp": {
+  "type": "String",
+  "defaultValue": "10.110.0.4",
+  "metadata": {"displayName": "Hub firewall private IP"}
+ },
+ "minimumTlsVersion": {
+  "type": "String",
+  "defaultValue": "TLS1_2",
+  "allowedValues": ["TLS1_0", "TLS1_1", "TLS1_2"],
+  "metadata": {"displayName": "Minimum TLS version for storage accounts"}
+ }
+}

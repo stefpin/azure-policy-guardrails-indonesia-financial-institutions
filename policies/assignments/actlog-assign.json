@@ -1,0 +1,1 @@
+{"logAnalytics": {"value": "$LAW_ID"}, "effect": {"value": "DeployIfNotExists"}}

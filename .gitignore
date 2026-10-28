@@ -1,0 +1,22 @@
+# Working folder and evidence that the runbook writes (step 1.2) if you run it from inside a clone
+alz-policy-demo/
+evidence/
+
+# Secrets - never commit
+*.env
+*.pfx
+*.pem
+*.key
+*.publishsettings
+local.settings.json
+
+# Python / editor / OS noise
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+.vscode/
+.idea/
+Thumbs.db
+.DS_Store

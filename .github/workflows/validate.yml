@@ -1,0 +1,32 @@
+name: validate
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  repository-checks:
+    name: Repository checks
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.12'
+      - name: Policies, runbook here-strings, Markdown links, scripts in sync, hygiene
+        run: python tools/validate_repo.py
+      - name: PowerShell syntax check
+        shell: powershell
+        run: |
+          $bad = 0
+          Get-ChildItem -Recurse -Filter *.ps1 | ForEach-Object {
+            $tokens = $null; $errors = $null
+            [void][System.Management.Automation.Language.Parser]::ParseFile($_.FullName, [ref]$tokens, [ref]$errors)
+            if ($errors -and $errors.Count) { $bad++; "$($_.FullName): $($errors[0].Message)" }
+          }
+          if ($bad) { throw "$bad PowerShell file(s) with syntax errors" }
+          "All PowerShell files parse."

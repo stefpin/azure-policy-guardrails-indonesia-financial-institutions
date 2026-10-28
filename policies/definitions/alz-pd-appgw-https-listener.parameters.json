@@ -1,0 +1,11 @@
+{
+ "effect": {
+  "type": "String",
+  "allowedValues": ["Audit", "Deny", "Disabled"],
+  "defaultValue": "Audit",
+  "metadata": {
+   "displayName": "Effect",
+   "description": "What the policy does when it finds a problem."
+  }
+ }
+}

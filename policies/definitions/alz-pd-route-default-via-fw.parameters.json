@@ -1,0 +1,19 @@
+{
+ "effect": {
+  "type": "String",
+  "allowedValues": ["Audit", "Deny", "Disabled"],
+  "defaultValue": "Audit",
+  "metadata": {
+   "displayName": "Effect",
+   "description": "What the policy does when it finds a problem."
+  }
+ },
+ "firewallPrivateIp": {
+  "type": "String",
+  "defaultValue": "10.110.0.4",
+  "metadata": {
+   "displayName": "Hub firewall private IP",
+   "description": "The only allowed next hop for 0.0.0.0/0."
+  }
+ }
+}

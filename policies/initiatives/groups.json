@@ -1,0 +1,35 @@
+[
+ {
+  "name": "F1-Locations",
+  "displayName": "Family 1 - Approved deployment locations"
+ },
+ {
+  "name": "F2-PublicExposure",
+  "displayName": "Family 2 - Prevent unintended public exposure"
+ },
+ {
+  "name": "F3-DataInTransit",
+  "displayName": "Family 3 - Protect data in transit"
+ },
+ {
+  "name": "F4-StoredDataKeys",
+  "displayName": "Family 4 - Protect stored data and keys"
+ },
+ {"name": "F5-Monitoring", "displayName": "Family 5 - Centralised monitoring"},
+ {
+  "name": "F6-BackupRecovery",
+  "displayName": "Family 6 - Backup and recovery protection"
+ },
+ {
+  "name": "F7-ComputeBaseline",
+  "displayName": "Family 7 - Secure compute baseline"
+ },
+ {
+  "name": "F8-NetworkSegmentation",
+  "displayName": "Family 8 - Network segmentation and controlled egress"
+ },
+ {
+  "name": "F9-Ownership",
+  "displayName": "Family 9 - Ownership and accountability"
+ }
+]

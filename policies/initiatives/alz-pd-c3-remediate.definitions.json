@@ -1,0 +1,63 @@
+[
+ {
+  "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/ea3f2387-9b95-492a-a190-fcdc54f7b070",
+  "policyDefinitionReferenceId": "InheritOwnerTag",
+  "groupNames": ["F9-Ownership"],
+  "parameters": {"tagName": {"value": "[parameters('ownerTagName')]"}}
+ },
+ {
+  "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/ea3f2387-9b95-492a-a190-fcdc54f7b070",
+  "policyDefinitionReferenceId": "InheritCostCenterTag",
+  "groupNames": ["F9-Ownership"],
+  "parameters": {"tagName": {"value": "[parameters('costCenterTagName')]"}}
+ },
+ {
+  "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/6b359d8f-f88d-4052-aa7c-32015963ecc1",
+  "policyDefinitionReferenceId": "DeployDiagKeyVault",
+  "groupNames": ["F5-Monitoring"],
+  "parameters": {
+   "effect": {"value": "DeployIfNotExists"},
+   "logAnalytics": {"value": "[parameters('logAnalyticsWorkspaceId')]"},
+   "categoryGroup": {"value": "allLogs"}
+  }
+ },
+ {
+  "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/c0d8e23a-47be-4032-961f-8b0ff3957061",
+  "policyDefinitionReferenceId": "DeployDiagAppService",
+  "groupNames": ["F5-Monitoring"],
+  "parameters": {
+   "effect": {"value": "DeployIfNotExists"},
+   "logAnalytics": {"value": "[parameters('logAnalyticsWorkspaceId')]"}
+  }
+ },
+ {
+  "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/cdd1dbc6-0004-4fcd-afd7-b67550de37ff",
+  "policyDefinitionReferenceId": "DeployDiagPostgres",
+  "groupNames": ["F5-Monitoring"],
+  "parameters": {
+   "effect": {"value": "DeployIfNotExists"},
+   "logAnalytics": {"value": "[parameters('logAnalyticsWorkspaceId')]"},
+   "categoryGroup": {"value": "allLogs"}
+  }
+ },
+ {
+  "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/92012204-a7e4-4a95-bbe5-90d0d3e12735",
+  "policyDefinitionReferenceId": "DeployDiagAppGateway",
+  "groupNames": ["F5-Monitoring"],
+  "parameters": {
+   "effect": {"value": "DeployIfNotExists"},
+   "logAnalytics": {"value": "[parameters('logAnalyticsWorkspaceId')]"},
+   "categoryGroup": {"value": "allLogs"}
+  }
+ },
+ {
+  "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/fa570aa1-acca-4eea-8e5a-233cf2c5e4c2",
+  "policyDefinitionReferenceId": "DeployDiagRedisEnterprise",
+  "groupNames": ["F5-Monitoring"],
+  "parameters": {
+   "effect": {"value": "DeployIfNotExists"},
+   "logAnalytics": {"value": "[parameters('logAnalyticsWorkspaceId')]"},
+   "categoryGroup": {"value": "allLogs"}
+  }
+ }
+]

@@ -1,0 +1,16 @@
+{
+ "effect": {
+  "type": "String",
+  "allowedValues": ["Audit", "Deny", "Disabled"],
+  "defaultValue": "Deny",
+  "metadata": {
+   "displayName": "Effect",
+   "description": "What the policy does when it finds a problem."
+  }
+ },
+ "listOfAllowedLocations": {
+  "type": "Array",
+  "defaultValue": ["indonesiacentral", "southeastasia"],
+  "metadata": {"displayName": "Allowed regions", "strongType": "location"}
+ }
+}

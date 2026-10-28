@@ -1,0 +1,9 @@
+{
+ "logAnalyticsWorkspaceId": {
+  "type": "String",
+  "metadata": {
+   "displayName": "Central Log Analytics workspace (resource ID)",
+   "description": "Where diagnostic logs must be sent."
+  }
+ }
+}

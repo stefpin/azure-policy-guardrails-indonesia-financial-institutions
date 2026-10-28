@@ -1,0 +1,5 @@
+# Line endings must not change between clones and operating systems: tools/extract_scripts.py --check
+# compares the generated scripts byte for byte.
+* text=auto eol=lf
+*.png binary
+*.pdf binary

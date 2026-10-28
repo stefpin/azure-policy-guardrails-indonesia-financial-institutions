@@ -1,0 +1,71 @@
+[
+ {
+  "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/e56962a6-4747-49cd-b67b-bf8b01975c4c",
+  "policyDefinitionReferenceId": "AllowedLocations",
+  "groupNames": ["F1-Locations"],
+  "parameters": {
+   "effect": {"value": "Deny"},
+   "listOfAllowedLocations": {"value": "[parameters('allowedLocations')]"}
+  }
+ },
+ {
+  "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/83a86a26-fd1f-447c-b59d-e51f44264114",
+  "policyDefinitionReferenceId": "NoPublicIpOnNic",
+  "groupNames": ["F2-PublicExposure"],
+  "parameters": {}
+ },
+ {
+  "policyDefinitionId": "/subscriptions/$SUB/providers/Microsoft.Authorization/policyDefinitions/alz-pd-nsg-no-internet-mgmt",
+  "policyDefinitionReferenceId": "NsgNoInternetMgmtPorts",
+  "groupNames": ["F2-PublicExposure"],
+  "parameters": {"effect": {"value": "Deny"}}
+ },
+ {
+  "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/404c3081-a854-4457-ae30-26a93ef643f9",
+  "policyDefinitionReferenceId": "StorageSecureTransfer",
+  "groupNames": ["F3-DataInTransit"],
+  "parameters": {"effect": {"value": "Deny"}}
+ },
+ {
+  "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/fe83a0eb-a853-422d-aac2-1bffd182c5d0",
+  "policyDefinitionReferenceId": "StorageMinTls",
+  "groupNames": ["F3-DataInTransit"],
+  "parameters": {
+   "effect": {"value": "Deny"},
+   "minimumTlsVersion": {"value": "[parameters('minimumTlsVersion')]"}
+  }
+ },
+ {
+  "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/a4af4a39-4135-47fb-b175-47fbdf85311d",
+  "policyDefinitionReferenceId": "AppServiceHttpsOnly",
+  "groupNames": ["F3-DataInTransit"],
+  "parameters": {"effect": {"value": "Deny"}}
+ },
+ {
+  "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/0b60c0b2-2dc2-4e1c-b5c9-abbed971de53",
+  "policyDefinitionReferenceId": "KeyVaultPurgeProtection",
+  "groupNames": ["F4-StoredDataKeys"],
+  "parameters": {"effect": {"value": "Deny"}}
+ },
+ {
+  "policyDefinitionId": "/subscriptions/$SUB/providers/Microsoft.Authorization/policyDefinitions/alz-pd-route-default-via-fw",
+  "policyDefinitionReferenceId": "RouteDefaultViaFirewall",
+  "groupNames": ["F8-NetworkSegmentation"],
+  "parameters": {
+   "effect": {"value": "Deny"},
+   "firewallPrivateIp": {"value": "[parameters('firewallPrivateIp')]"}
+  }
+ },
+ {
+  "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/871b6d14-10aa-478d-b590-94f262ecfa99",
+  "policyDefinitionReferenceId": "RequireCostCenterTag",
+  "groupNames": ["F9-Ownership"],
+  "parameters": {"tagName": {"value": "[parameters('costCenterTagName')]"}}
+ },
+ {
+  "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/871b6d14-10aa-478d-b590-94f262ecfa99",
+  "policyDefinitionReferenceId": "RequireOwnerTag",
+  "groupNames": ["F9-Ownership"],
+  "parameters": {"tagName": {"value": "[parameters('ownerTagName')]"}}
+ }
+]

@@ -1,0 +1,21 @@
+{
+ "effect": {
+  "type": "String",
+  "allowedValues": ["Audit", "Deny", "Disabled"],
+  "defaultValue": "Deny",
+  "metadata": {
+   "displayName": "Effect",
+   "description": "What the policy does when it finds a problem."
+  }
+ },
+ "firstTagName": {
+  "type": "String",
+  "defaultValue": "CostCenter",
+  "metadata": {"displayName": "First required tag"}
+ },
+ "secondTagName": {
+  "type": "String",
+  "defaultValue": "Owner",
+  "metadata": {"displayName": "Second required tag"}
+ }
+}

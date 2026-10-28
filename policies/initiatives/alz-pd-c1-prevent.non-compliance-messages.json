@@ -1,0 +1,45 @@
+[
+ {
+  "message": "Guardrail (Chapter 1 - Prevent): read the policy name in this error."
+ },
+ {
+  "message": "F1 Locations: deploy only in Indonesia Central or Southeast Asia.",
+  "policyDefinitionReferenceId": "AllowedLocations"
+ },
+ {
+  "message": "F2 Public exposure: a network interface must not have a public IP.",
+  "policyDefinitionReferenceId": "NoPublicIpOnNic"
+ },
+ {
+  "message": "F2 Public exposure: do not open SSH (22) or RDP (3389) to the Internet.",
+  "policyDefinitionReferenceId": "NsgNoInternetMgmtPorts"
+ },
+ {
+  "message": "F3 Data in transit: storage accounts must require HTTPS.",
+  "policyDefinitionReferenceId": "StorageSecureTransfer"
+ },
+ {
+  "message": "F3 Data in transit: storage accounts must use the approved TLS version.",
+  "policyDefinitionReferenceId": "StorageMinTls"
+ },
+ {
+  "message": "F3 Data in transit: web apps must allow HTTPS only.",
+  "policyDefinitionReferenceId": "AppServiceHttpsOnly"
+ },
+ {
+  "message": "F4 Stored data and keys: a Key Vault needs purge protection.",
+  "policyDefinitionReferenceId": "KeyVaultPurgeProtection"
+ },
+ {
+  "message": "F8 Segmentation: 0.0.0.0/0 must go through the hub firewall.",
+  "policyDefinitionReferenceId": "RouteDefaultViaFirewall"
+ },
+ {
+  "message": "F9 Ownership: every resource needs the CostCenter tag.",
+  "policyDefinitionReferenceId": "RequireCostCenterTag"
+ },
+ {
+  "message": "F9 Ownership: every resource needs the Owner tag.",
+  "policyDefinitionReferenceId": "RequireOwnerTag"
+ }
+]

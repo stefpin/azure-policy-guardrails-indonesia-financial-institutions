@@ -1,0 +1,22 @@
+# Appendix F - What was verified, and how
+
+[Runbook index](README.md) &middot; Previous: [Appendix E - One-page crib sheet](appendix-e-crib-sheet.md) &middot; Next: [Appendix G - Sources](appendix-g-sources.md)
+
+This record is here so that you know how much trust the numbers and commands deserve. **The first draft of this runbook was written without running its commands against Azure. The first end-to-end dry run (October 2026) then led to ten corrections** (Appendix H). Everything else was checked by reading, or offline.
+
+| What | How it was checked | Result |
+| --- | --- | --- |
+| Environment (resource groups, the 26 sample-application resources, settings, tags, subnets, NSG rules, routes) | Read-only Azure CLI queries on the environment used for the dry run (October 2026) | Used as the starting state in Part 0 and in the figures |
+| Existing baseline policy objects and any inherited policies | Read-only `az policy assignment/definition/set-definition show` and the rules of the Modify and Deny policies | Drives the test design (Test 4 and Test 1) and Appendix C |
+| All 35 built-in references (the other 3 of the 38 rules are custom) (IDs, display names, parameter names, allowed effects, required parameters, roles) | Exported the live catalogue (2,910 built-in definitions) and compared every reference with a script | 0 errors |
+| Five custom policy rules | Aliases checked against the Azure provider alias list; logic tested offline with 39 test cases that include the NSGs, route table and gateway of the dry-run environment | 39 of 39 passed |
+| The PowerShell that builds the three initiatives | Run offline in Windows PowerShell 5.1 and compared with the validated JSON | Identical |
+| Azure CLI syntax of the commands | Every PowerShell block was checked with the Windows PowerShell 5.1 parser, and every az command was then run in a sandbox that is not signed in to Azure. The CLI reads and checks its arguments first and only then asks you to sign in, so a wrong option name, a missing value or a broken quote shows up as an argument error. The same test also found one real problem that was fixed before release (round brackets inside a --query, see Part 6). | First draft: 112 code blocks, 0 PowerShell syntax errors, 184 az invocations parsed with 0 argument errors. The blocks were extended afterwards: every generated script parses in Windows PowerShell 5.1 (CI repeats this), and the new az commands were argument-checked offline with Azure CLI 2.91. A few sandbox-only messages were reviewed and explained: empty variables because nothing could be created, an extension prompt, and built-in policy IDs that need a sign-in. |
+| Azure Policy behaviour (order of evaluation, timing, enforcement mode, exemptions) | Microsoft Learn documentation | Linked in Appendix G |
+| Azure Portal menu, tab and field names | Observed in the live Portal in October 2026, read-only: Policy (Overview, Compliance, Remediation, Definitions, Assignments, Exemptions, the Assign and Create-exemption forms), a resource group, six resource pages, Log Analytics, Activity log and the create-storage wizard (never submitted) | Used as written. Items marked **NOT VERIFIED LIVE** could not be opened without changing Azure |
+| Independent review of the finished text | A second reader that did not write the text checked the order of the steps, every command, the clean-up and the wording against Microsoft Learn and the Azure CLI source (read-only; nothing was run against Azure) | 15 findings: 13 fixed in this version (for example the Azure Backup clean-up, the exemption commands and the Trusted Launch step), 1 reworded, and 1 rejected - the Owner check in step 1.1 had already been tested live (read-only) and works as written |
+| **End-to-end execution (dry run 1, October 2026)** | The command path of Parts 1 to 4 (including 4.9) and Part 5 Level 1, in Azure Cloud Shell (PowerShell 7, Azure CLI 2.91) | **Ten corrections applied (Appendix H). Not run: the Portal (Option B) boxes, Test 10 and Part 5 Levels 2 to 4.** The changes made after the dry run to generalise the runbook (placeholders, the resource-group Owner-tag step, the assumptions check, forward-slash paths and the 90-day exemption expiry) were **not** tested end to end. |
+
+---
+
+[Runbook index](README.md) &middot; Previous: [Appendix E - One-page crib sheet](appendix-e-crib-sheet.md) &middot; Next: [Appendix G - Sources](appendix-g-sources.md)

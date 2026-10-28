@@ -1,0 +1,112 @@
+{
+ "if": {
+  "anyOf": [
+   {
+    "allOf": [
+     {"field": "type", "equals": "Microsoft.Network/networkSecurityGroups/securityRules"},
+     {
+      "field": "Microsoft.Network/networkSecurityGroups/securityRules/direction",
+      "equals": "Inbound"
+     },
+     {"field": "Microsoft.Network/networkSecurityGroups/securityRules/access", "equals": "Allow"},
+     {
+      "anyOf": [
+       {
+        "field": "Microsoft.Network/networkSecurityGroups/securityRules/sourceAddressPrefix",
+        "in": ["*", "Internet", "0.0.0.0/0"]
+       },
+       {
+        "count": {
+         "field": "Microsoft.Network/networkSecurityGroups/securityRules/sourceAddressPrefixes[*]",
+         "where": {
+          "field": "Microsoft.Network/networkSecurityGroups/securityRules/sourceAddressPrefixes[*]",
+          "in": ["*", "Internet", "0.0.0.0/0"]
+         }
+        },
+        "greater": 0
+       }
+      ]
+     },
+     {
+      "anyOf": [
+       {
+        "field": "Microsoft.Network/networkSecurityGroups/securityRules/destinationPortRange",
+        "in": ["22", "3389", "*"]
+       },
+       {
+        "count": {
+         "field": "Microsoft.Network/networkSecurityGroups/securityRules/destinationPortRanges[*]",
+         "where": {
+          "field": "Microsoft.Network/networkSecurityGroups/securityRules/destinationPortRanges[*]",
+          "in": ["22", "3389", "*"]
+         }
+        },
+        "greater": 0
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "allOf": [
+     {"field": "type", "equals": "Microsoft.Network/networkSecurityGroups"},
+     {
+      "count": {
+       "field": "Microsoft.Network/networkSecurityGroups/securityRules[*]",
+       "where": {
+        "allOf": [
+         {
+          "field": "Microsoft.Network/networkSecurityGroups/securityRules[*].direction",
+          "equals": "Inbound"
+         },
+         {
+          "field": "Microsoft.Network/networkSecurityGroups/securityRules[*].access",
+          "equals": "Allow"
+         },
+         {
+          "anyOf": [
+           {
+            "field": "Microsoft.Network/networkSecurityGroups/securityRules[*].sourceAddressPrefix",
+            "in": ["*", "Internet", "0.0.0.0/0"]
+           },
+           {
+            "count": {
+             "field": "Microsoft.Network/networkSecurityGroups/securityRules[*].sourceAddressPrefixes[*]",
+             "where": {
+              "field": "Microsoft.Network/networkSecurityGroups/securityRules[*].sourceAddressPrefixes[*]",
+              "in": ["*", "Internet", "0.0.0.0/0"]
+             }
+            },
+            "greater": 0
+           }
+          ]
+         },
+         {
+          "anyOf": [
+           {
+            "field": "Microsoft.Network/networkSecurityGroups/securityRules[*].destinationPortRange",
+            "in": ["22", "3389", "*"]
+           },
+           {
+            "count": {
+             "field": "Microsoft.Network/networkSecurityGroups/securityRules[*].destinationPortRanges[*]",
+             "where": {
+              "field": "Microsoft.Network/networkSecurityGroups/securityRules[*].destinationPortRanges[*]",
+              "in": ["22", "3389", "*"]
+             }
+            },
+            "greater": 0
+           }
+          ]
+         }
+        ]
+       }
+      },
+      "greater": 0
+     }
+    ]
+   }
+  ]
+ },
+ "then": {"effect": "[parameters('effect')]"}
+}

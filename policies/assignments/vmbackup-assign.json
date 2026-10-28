@@ -1,0 +1,7 @@
+{
+ "effect": {"value": "DeployIfNotExists"},
+ "vaultLocation": {"value": "indonesiacentral"},
+ "backupPolicyId": {"value": "$BACKUP_POLICY_ID"},
+ "inclusionTagName": {"value": "Backup"},
+ "inclusionTagValue": {"value": ["daily"]}
+}
